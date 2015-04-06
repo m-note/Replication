@@ -44,7 +44,7 @@ data_extract <- read.csv("data_extract.csv", header=TRUE)
         hist(data_extract$DG02)
 
 # Match WGI data to USAID data
-data_WGI <- read.csv("/Users/S/Dropbox/Study/６学期/論文：国際政治経済の諸問題/Data/WGI/WGI_Data_Renamed.csv", header=TRUE)
+data_WGI <- read.csv("/Users/S/Dropbox/Study/Data/WGI/WGI_Data_Renamed.csv", header=TRUE)
   # 欠損値はExcelでNAにしている
 #colnames(data_WGI)[4] <- 1996
 #colnames(data_WGI)[5] <- 1998
@@ -258,7 +258,7 @@ acf(data$AID110)
 pacf(data$AID110)
 
 # Time Series, ACF and PACF
-setwd("/Users/S/Dropbox/Study/６学期/論文：国際政治経済の諸問題/Analysis/ACF_PACF")
+setwd("/Users/S/Dropbox/Study/Analysis/ACF_PACF")
 list_country <- unique(stri_trim_right(as.character(data$cname), pattern = "\\P{Wspace}") )
 
 attach(data)
@@ -292,7 +292,7 @@ for (i in 1:length(list_country)) {
   }, error=function(e){}) #just skip the error
 }
 detach(data)
-setwd("/Users/S/Dropbox/Study/６学期/論文：国際政治経済の諸問題/Data")
+setwd("/Users/S/Dropbox/Study/Data")
 
 # WGI_PVのlagを考える
 list_country <- unique(stri_trim_right(as.character(data$cname), pattern = "\\P{Wspace}") )
@@ -807,7 +807,7 @@ data$Inc_Consensus<- as.numeric(as.character(data$Inc_Consensus))
 str(data$Inc_Consensus)
 
 # Human RightsについてはCIRIのデータを使う
-hrData <- read.csv("/Users/S/Dropbox/Study/６学期/論文：国際政治経済の諸問題/Data/CIRI/CIRI Data 1981_2011 2014.04.14.csv", header=TRUE)
+hrData <- read.csv("/Users/S/Dropbox/Study/Data/CIRI/CIRI Data 1981_2011 2014.04.14.csv", header=TRUE)
 
 data$CIRI_HR <- NA  # Prepare Empty Column
 data <- data[,c(1:3,562,4:561)]
