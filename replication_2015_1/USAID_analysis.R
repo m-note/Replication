@@ -1,7 +1,7 @@
 rm(list=ls())
 
 
-setwd("/Users/S/Dropbox/Study/６学期/論文：国際政治経済の諸問題/Data")
+setwd("/Users/S/Dropbox/Study/Data")
 library(foreign)
 data <- read.spss("USAID_DG_Programs.sav", to.data.frame=TRUE)
 
